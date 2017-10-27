@@ -6,7 +6,7 @@ import java.util.Date;
 public class Contato implements Serializable {
 
 	private static final long serialVersionUID = -2784142125685051029L;
-	
+
 	private Long id;
 	private String nome;
 	private String endereco;
@@ -17,6 +17,14 @@ public class Contato implements Serializable {
 	}
 
 	public Contato(String nome, String endereco, String email, Date dataNascimento) {
+		this.nome = nome;
+		this.endereco = endereco;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+	}
+
+	public Contato(Long id, String nome, String endereco, String email, Date dataNascimento) {
+		this.id = id;
 		this.nome = nome;
 		this.endereco = endereco;
 		this.email = email;
