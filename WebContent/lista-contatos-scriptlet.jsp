@@ -10,6 +10,7 @@
 </head>
 <body>
 
+	<table>
 	<%
 		ContatoDAO contatoDAO = new ContatoDAO();
 		List<Contato> contatos = contatoDAO.getTodos();
@@ -29,7 +30,7 @@
 		<%
 		}
 		%>
-	
+	</table>
 
 </body>
 </html>
