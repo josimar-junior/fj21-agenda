@@ -1,9 +1,9 @@
 package br.com.fj21.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +22,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		PrintWriter writer = response.getWriter();
-		
+//		PrintWriter writer = response.getWriter();
 		String nome = request.getParameter("nome");
 		String endereco = request.getParameter("endereco");
 		String email = request.getParameter("email");
@@ -34,11 +33,14 @@ public class AdicionaContatoServlet extends HttpServlet {
 		
 		new ContatoDAO().salvar(contato);
 		
-		writer.println("<html>");
-		writer.println("<body>");
-		writer.println("Contato " + contato.getNome() + " salvo com sucesso.");
-		writer.println("</body>");
-		writer.println("<html>");
+		RequestDispatcher rd = request.getRequestDispatcher("contato-adicionado.jsp");
+		rd.forward(request, response);
+		
+//		writer.println("<html>");
+//		writer.println("<body>");
+//		writer.println("Contato " + contato.getNome() + " salvo com sucesso.");
+//		writer.println("</body>");
+//		writer.println("<html>");
 	}
 	
 }

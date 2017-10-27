@@ -4,7 +4,7 @@
   <display-name>fj21-agenda</display-name>
   
   <welcome-file-list>
-    <welcome-file>adiciona-contato.html</welcome-file>
+    <welcome-file>adiciona-contato.jsp</welcome-file>
   </welcome-file-list>
   
 </web-app>
